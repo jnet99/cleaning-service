@@ -15,15 +15,17 @@
   <!-- NAV -->
   <nav class="lyb-nav">
     <div class="lyb-logo">
-      <img src="logo.jpeg" alt="Limpieza y Brillo Logo" class="lyb-logo-img">
+      <div class="lyb-logo-icon">
+        <img src="logo.jpeg" alt="Limpieza y Brillo Logo" class="lyb-logo-img">
+      </div>
       <span class="lyb-logo-text">Limpieza <span>y Brillo</span></span>
     </div>
     <ul class="lyb-nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="#services">Services</a></li>
+      <li><a href="about1.html">About Us</a></li>
+      <li><a href="services.html">Services</a></li>
       <li><a href="#how-it-works">How it works</a></li>
-      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#areas-we-serve">Areas we serve</a></li>
       <li><a href="#booking">Contact</a></li>
     </ul>
     <button class="lyb-nav-cta" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Book now</button>
@@ -40,51 +42,56 @@
         <button class="lyb-btn-outline" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">See our services</button>
       </div>
     </div>
-    <div class="lyb-hero-visual">
-      <div class="lyb-stat-card">
-        <div class="lyb-stat-num">500+</div>
-        <div class="lyb-stat-label">Happy homes</div>
-      </div>
-      <div class="lyb-stat-card">
-        <div class="lyb-stat-num">5★</div>
-        <div class="lyb-stat-label">Average rating</div>
-      </div>
-      <div class="lyb-stat-card">
-        <div class="lyb-stat-num">100%</div>
-        <div class="lyb-stat-label">Satisfaction</div>
-      </div>
-      <div class="lyb-stat-card">
-        <div class="lyb-stat-num">3 yrs</div>
-        <div class="lyb-stat-label">Experience</div>
-      </div>
-    </div>
+    
   </section>
 
   <!-- SERVICES -->
-  <section id="services" class="lyb-section">
+    <section id="services" class="lyb-section">
     <div class="lyb-section-label">What we offer</div>
-    <h2 class="lyb-section-title">Cleaning services for every room</h2>
+    <h2 class="lyb-section-title">Cleaning services for every home</h2>
     <p class="lyb-section-sub">We take care of every corner so you can focus on what matters most.</p>
     <div class="lyb-services-grid">
       <div class="lyb-service-card">
         <div class="lyb-service-icon" aria-hidden="true"><i class="ti ti-home"></i></div>
         <div class="lyb-service-name">Standard clean</div>
         <div class="lyb-service-desc">Regular maintenance cleaning of all living areas, bedrooms, bathrooms, and kitchen.</div>
+        <a href="services.html#svc-standard" style="display:inline-block;margin-top:12px;font-size:13px;font-weight:700;color:#1b9e75;text-decoration:none;">Learn more →</a>
       </div>
       <div class="lyb-service-card">
         <div class="lyb-service-icon" aria-hidden="true"><i class="ti ti-search"></i></div>
         <div class="lyb-service-name">Deep clean</div>
         <div class="lyb-service-desc">Thorough top-to-bottom cleaning including baseboards, inside appliances, and hard-to-reach spots.</div>
+        <a href="services.html#svc-deep" style="display:inline-block;margin-top:12px;font-size:13px;font-weight:700;color:#1b9e75;text-decoration:none;">Learn more →</a>
       </div>
       <div class="lyb-service-card">
         <div class="lyb-service-icon" aria-hidden="true"><i class="ti ti-refresh"></i></div>
         <div class="lyb-service-name">Weekly / bi-weekly</div>
         <div class="lyb-service-desc">Recurring cleaning plans tailored to your schedule and needs at a discounted rate.</div>
+        <a href="services.html#svc-recurring" style="display:inline-block;margin-top:12px;font-size:13px;font-weight:700;color:#1b9e75;text-decoration:none;">Learn more →</a>
       </div>
       <div class="lyb-service-card">
         <div class="lyb-service-icon" aria-hidden="true"><i class="ti ti-package"></i></div>
         <div class="lyb-service-name">Move-in / move-out</div>
         <div class="lyb-service-desc">Get your new home sparkling clean before you move in, or leave your old one spotless.</div>
+        <a href="services.html#svc-moveinout" style="display:inline-block;margin-top:12px;font-size:13px;font-weight:700;color:#1b9e75;text-decoration:none;">Learn more →</a>
+      </div>
+      <div class="lyb-service-card">
+        <div class="lyb-service-icon" aria-hidden="true"><i class="ti ti-calendar-event"></i></div>
+        <div class="lyb-service-name">One-time clean</div>
+        <div class="lyb-service-desc">No commitment needed. Book us once for any occasion — parties, guests, or just because.</div>
+        <a href="services.html#svc-onetime" style="display:inline-block;margin-top:12px;font-size:13px;font-weight:700;color:#1b9e75;text-decoration:none;">Learn more →</a>
+      </div>
+      <div class="lyb-service-card">
+        <div class="lyb-service-icon" aria-hidden="true"><i class="ti ti-building"></i></div>
+        <div class="lyb-service-name">Apartment clean</div>
+        <div class="lyb-service-desc">Specialized cleaning tailored to apartment layouts and landlord standards.</div>
+        <a href="services.html#svc-apartment" style="display:inline-block;margin-top:12px;font-size:13px;font-weight:700;color:#1b9e75;text-decoration:none;">Learn more →</a>
+      </div>
+      <div class="lyb-service-card">
+        <div class="lyb-service-icon" aria-hidden="true"><i class="ti ti-device-floppy"></i></div>
+        <div class="lyb-service-name">Appliances clean</div>
+        <div class="lyb-service-desc">Deep inside-out cleaning of ovens, fridges, microwaves, washers, and more.</div>
+        <a href="services.html#svc-appliances" style="display:inline-block;margin-top:12px;font-size:13px;font-weight:700;color:#1b9e75;text-decoration:none;">Learn more →</a>
       </div>
     </div>
   </section>
@@ -118,53 +125,60 @@
     </div>
   </section>
 
-  <!-- REVIEWS -->
-  <section id="reviews" class="lyb-section">
-    <div class="lyb-section-label">What clients say</div>
-    <h2 class="lyb-section-title">Real homes, real results</h2>
-    <p class="lyb-section-sub">We're proud of the joy we bring to every household we serve.</p>
-    <div class="lyb-reviews-grid">
-      <div class="lyb-review-card">
-        <div class="lyb-stars">★★★★★</div>
-        <p class="lyb-review-text">"My house has never looked this clean. They got every corner — even spots I didn't think to ask about. Absolutely worth it!"</p>
-        <div class="lyb-reviewer">
-          <div class="lyb-avatar" style="background:#49b672;">MG</div>
-          <div>
-            <div class="lyb-reviewer-name">Maria G.</div>
-            <div class="lyb-reviewer-loc">Balch Springs, TX</div>
-          </div>
-        </div>
+  <!-- AREAS WE SERVE -->
+  <section id="areas-we-serve" class="lyb-areasweserve">
+    <div class="lyb-section-label">Local & Trusted</div>
+    <h2 class="lyb-section-title">Areas we serve</h2>
+    <p class="lyb-section-sub">We're proud to bring our family-owned cleaning care to homes across the Dallas area. We specialize in serving <strong>Forney, Texas</strong> and all the wonderful surrounding communities listed below. Not sure if we reach you? Just ask!</p>
+    
+    <div class="lyb-areas-grid">
+      <div class="lyb-area-card">
+        <span class="lyb-area-icon">📍</span>
+        <div class="lyb-area-name">Forney</div>
       </div>
-      <div class="lyb-review-card">
-        <div class="lyb-stars">★★★★★</div>
-        <p class="lyb-review-text">"I've used many cleaning services but Limpieza y Brillo is on another level. Reliable, thorough, and so friendly. I'm a customer for life."</p>
-        <div class="lyb-reviewer">
-          <div class="lyb-avatar" style="background:#f5c842; color: #3a2900;">JR</div>
-          <div>
-            <div class="lyb-reviewer-name">Jessica R.</div>
-            <div class="lyb-reviewer-loc">Mesquite, TX</div>
-          </div>
-        </div>
+      <div class="lyb-area-card">
+        <span class="lyb-area-icon">🏙️</span>
+        <div class="lyb-area-name">Dallas</div>
       </div>
-      <div class="lyb-review-card">
-        <div class="lyb-stars">★★★★★</div>
-        <p class="lyb-review-text">"Booked a deep clean before a family visit — they transformed my home. Everything sparkled. My guests couldn't believe it!"</p>
-        <div class="lyb-reviewer">
-          <div class="lyb-avatar" style="background:#0a4a38;">DL</div>
-          <div>
-            <div class="lyb-reviewer-name">David L.</div>
-            <div class="lyb-reviewer-loc">Garland, TX</div>
-          </div>
-        </div>
+      <div class="lyb-area-card">
+        <span class="lyb-area-icon">🌳</span>
+        <div class="lyb-area-name">Sunnyvale</div>
+      </div>
+      <div class="lyb-area-card">
+        <span class="lyb-area-icon">🏠</span>
+        <div class="lyb-area-name">Mesquite</div>
+      </div>
+      <div class="lyb-area-card">
+        <span class="lyb-area-icon">⛵</span>
+        <div class="lyb-area-name">Rockwall</div>
+      </div>
+      <div class="lyb-area-card">
+        <span class="lyb-area-icon">🏡</span>
+        <div class="lyb-area-name">Heath</div>
+      </div>
+      <div class="lyb-area-card">
+        <span class="lyb-area-icon">🏘️</span>
+        <div class="lyb-area-name">Crandall</div>
+      </div>
+      <div class="lyb-area-card">
+        <span class="lyb-area-icon">🚜</span>
+        <div class="lyb-area-name">Terrell</div>
+      </div>
+      <div class="lyb-area-card">
+        <span class="lyb-area-icon">🛤️</span>
+        <div class="lyb-area-name">Kaufman</div>
       </div>
     </div>
   </section>
-
   <!-- BOOKING -->
   <section id="booking" class="lyb-booking">
     <div class="lyb-section-label">Ready to shine?</div>
     <h2 class="lyb-section-title">Book your cleaning today</h2>
     <p class="lyb-section-sub">Fill out the form and we'll reach out to confirm your appointment.</p>
+    <div class="lyb-promo-badge">
+      <span class="lyb-promo-icon">✨</span>
+      <span class="lyb-promo-text">First time booking? <strong>Get 10% OFF!</strong></span>
+    </div>
     <div class="lyb-form">
       <input class="lyb-input" type="text" placeholder="Your name" />
       <input class="lyb-input" type="tel" placeholder="Phone number" />
@@ -175,9 +189,13 @@
         <option>Deep clean</option>
         <option>Weekly / bi-weekly</option>
         <option>Move-in / move-out</option>
+        <option>One-time clean</option>
+        <option>Apartment clean</option>
+        <option>Appliances clean</option>
       </select>
       <input class="lyb-input" type="date" />
       <input class="lyb-input lyb-form-full" type="text" placeholder="Address" />
+      <textarea class="lyb-input lyb-form-full" placeholder="Additional information (e.g. specific appliances, pets, gate codes, etc.)"></textarea>
       <div class="lyb-form-full">
         <button class="lyb-btn-yellow">Request my cleaning</button>
       </div>
@@ -188,11 +206,28 @@
   <footer class="lyb-footer">
     <div class="lyb-footer-logo">Limpieza <span>y Brillo</span></div>
     <div class="lyb-footer-tagline">Bringing shine to homes across the Dallas area</div>
+    
+    <div class="lyb-footer-social">
+      <span>Follow us:</span>
+      <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+      <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
+    </div>
+
+    <div class="lyb-footer-payments">
+      <span>Payments accepted:</span>
+      <div class="payment-icons">
+        <span class="pay-tag">Venmo</span>
+        <span class="pay-tag">Zelle</span>
+        <span class="pay-tag">Cash</span>
+        <span class="pay-tag">Check</span>
+      </div>
+    </div>
+
     <div class="lyb-footer-links">
-      <a href="about.html">About</a>
-      <a href="#services">Services</a>
+      <a href="about1.html">About</a>
+      <a href="services.html">Services</a>
       <a href="#how-it-works">How it works</a>
-      <a href="#reviews">Reviews</a>
+      <a href="#areas-we-serve">Areas We Serve</a>
       <a href="#booking">Book now</a>
     </div>
     <div class="lyb-footer-copy">© 2026 Limpieza y Brillo. All rights reserved.</div>

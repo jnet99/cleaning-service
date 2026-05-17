@@ -31,6 +31,12 @@ body {
   display: flex; align-items: center; justify-content: center;
   color: #fff;
   font-size: 18px;
+  overflow: hidden;
+}
+.lyb-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .lyb-logo-text {
   font-size: 18px;
@@ -68,7 +74,7 @@ body {
 
 /* ── HERO ── */
 .lyb-hero {
-  background: linear-gradient(135deg, #e1f5ee 0%, #fffde7 100%);
+  background: linear-gradient(135deg, #e1f5ee 0%, #ffe7fb 100%);
   padding: 4rem 2rem 3rem;
   display: flex;
   align-items: center;
@@ -97,7 +103,7 @@ body {
   line-height: 1.2;
   margin-bottom: 1rem;
 }
-.lyb-hero-title span { color: #49b672; }
+.lyb-hero-title span { color: #e39bd3; }
 .lyb-hero-sub {
   font-size: 16px;
   color: #4a6860;
@@ -159,7 +165,7 @@ body {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #49b672;
+  color: #123821;
   margin-bottom: 0.5rem;
 }
 .lyb-section-title {
@@ -168,7 +174,14 @@ body {
   color: #0a4a38;
   margin-bottom: 0.75rem;
 }
-.lyb-section-sub { font-size: 15px; color: #6b8a80; max-width: 500px; line-height: 1.6; }
+.lyb-section-sub {
+  font-size: 15px;
+  color: #6b8a80;
+  max-width: 500px;
+  line-height: 1.6;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* ── SERVICES ── */
 .lyb-services-grid {
@@ -179,7 +192,7 @@ body {
 }
 .lyb-service-card {
   background: #f8fffe;
-  border: 0.5px solid #c5e8de;
+  border: 0.5px solid #e39bd3;
   border-radius: 16px;
   padding: 1.5rem;
   transition: transform 0.2s, box-shadow 0.2s;
@@ -262,8 +275,52 @@ body {
 .lyb-reviewer-name { font-size: 13px; font-weight: 700; color: #03674a; }
 .lyb-reviewer-loc { font-size: 11px; color: #9ab8af; }
 
+/* ── AREAS WE SERVE ── */
+.lyb-areasweserve { background: #fff; padding: 3.5rem 2rem; text-align: center; }
+.lyb-areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin-top: 2rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.lyb-area-card {
+  background: #f0fbf7;
+  border: 1px solid #e6f3f0;
+  border-radius: 12px;
+  padding: 1rem;
+  transition: all 0.2s;
+}
+.lyb-area-card:hover { background: #e1f5ee; transform: scale(1.03); }
+.lyb-area-icon { font-size: 20px; margin-bottom: 6px; display: block; }
+.lyb-area-name { font-size: 14px; font-weight: 700; color: #0f6e56; }
+
+/* ── PROMO BADGE ── */
+.lyb-promo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #e39bd3;
+  border: 2px dashed #f5c842;
+  padding: 10px 24px;
+  border-radius: 50px;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  animation: float 3s ease-in-out infinite;
+}
+.lyb-promo-icon { font-size: 18px; }
+.lyb-promo-text { font-size: 14px; color: #054219; font-weight: 600; }
+.lyb-promo-text strong { color: #f5c842; font-weight: 900; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
 /* ── BOOKING ── */
-.lyb-booking { background: #cd9cc8; padding: 3.5rem 2rem; color: #fff; text-align: center; }
+.lyb-booking { background: #e39bd3; padding: 3.5rem 2rem; color: #fff; text-align: center; }
 .lyb-booking .lyb-section-label { color: #0e9c6d; }
 .lyb-booking .lyb-section-title { color: #054219; }
 .lyb-booking .lyb-section-sub { color: #11573f; margin-left: auto; margin-right: auto; }
@@ -285,6 +342,10 @@ body {
   outline: none;
   transition: border-color 0.2s;
   width: 100%;
+}
+textarea.lyb-input {
+  min-height: 100px;
+  resize: vertical;
 }
 .lyb-input::placeholder { color: rgba(255,255,255,0.55); }
 .lyb-input:focus { border-color: #9fe1cb; background: rgba(255,255,255,0.18); }
@@ -318,6 +379,15 @@ select.lyb-input option { background: #0f6e56; color: #fff; }
 .lyb-footer-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
 .lyb-footer-links a { color: #9fe1cb; text-decoration: none; font-size: 13px; font-weight: 600; }
 .lyb-footer-links a:hover { color: #fff; }
+
+.lyb-footer-social { margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 14px; font-weight: 700; color: #fff; }
+.lyb-footer-social a { color: #9fe1cb; font-size: 20px; transition: color 0.2s; display: flex; }
+.lyb-footer-social a:hover { color: #fff; }
+
+.lyb-footer-payments { margin-bottom: 1.5rem; font-size: 12px; color: #7aaa9a; font-weight: 600; }
+.payment-icons { display: flex; justify-content: center; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+.pay-tag { background: rgba(255,255,255,0.08); padding: 4px 12px; border-radius: 6px; color: #9fe1cb; font-size: 11px; font-weight: 700; }
+
 .lyb-footer-copy { font-size: 11px; color: #4a8a74; }
 
 /* ── RESPONSIVE ── */

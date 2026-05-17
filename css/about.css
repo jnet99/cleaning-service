@@ -1,0 +1,275 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  color: #1a1a2e;
+  background: #fff;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+.lyb-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: #fff;
+  border-bottom: 0.5px solid #e6f3f0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.lyb-logo { display: flex; align-items: center; gap: 10px; }
+.lyb-logo-icon {
+  width: 38px; height: 38px;
+  background: #49b672;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 18px;
+  overflow: hidden;
+}
+.lyb-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.lyb-logo-text { font-size: 18px; font-weight: 900; color: #0f6e56; letter-spacing: -0.3px; }
+.lyb-logo-text span { color: #e39bd3; }
+.lyb-nav-links { display: flex; gap: 1.5rem; list-style: none; }
+.lyb-nav-links a {
+  text-decoration: none; font-size: 14px; font-weight: 600; color: #444; transition: color 0.2s;
+}
+.lyb-nav-links a:hover, .lyb-nav-links a.active { color: #49b672; }
+.lyb-nav-cta {
+  background: #49b672; color: #fff; border: none; border-radius: 50px;
+  padding: 9px 22px; font-size: 14px; font-weight: 700; cursor: pointer;
+  font-family: 'Nunito', sans-serif; transition: background 0.2s;
+}
+.lyb-nav-cta:hover { background: #0f6e56; }
+
+/* ── ABOUT HERO ── */
+.about-hero {
+  background: linear-gradient(135deg, #ffe7f9 0%, #e1f5ee 100%);
+  padding: 4rem 2rem 3.5rem;
+  text-align: center;
+}
+.about-hero-badge {
+  display: inline-block;
+  background: #f5c842; color: #4a3500;
+  font-size: 12px; font-weight: 800;
+  padding: 5px 16px; border-radius: 50px;
+  margin-bottom: 1.2rem; letter-spacing: 0.5px; text-transform: uppercase;
+}
+.about-hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800; color: #0a4a38; line-height: 1.2; margin-bottom: 1rem;
+}
+.about-hero-title span { color: #1b9e75; }
+.about-hero-sub {
+  font-size: 17px; color: #4a6860; line-height: 1.75;
+  max-width: 580px; margin: 0 auto;
+}
+
+/* ── SECTION BASE ── */
+.lyb-section { padding: 3.5rem 2rem; }
+.lyb-section-label {
+  font-size: 12px; font-weight: 800; text-transform: uppercase;
+  letter-spacing: 1px; color: #1b9e75; margin-bottom: 0.5rem;
+}
+.lyb-section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem); color: #0a4a38; margin-bottom: 0.75rem;
+}
+.lyb-section-sub { font-size: 15px; color: #6b8a80; line-height: 1.7; }
+
+/* ── OUR STORY ── */
+.story-section {
+  padding: 4rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.story-text { flex: 1; min-width: 260px; }
+.story-text p {
+  font-size: 15px; color: #4a6860; line-height: 1.85; margin-bottom: 1.1rem;
+}
+.story-text p:last-child { margin-bottom: 0; }
+.story-text strong { color: #0a4a38; font-weight: 800; }
+.story-visual {
+  flex: 0 0 auto;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.founder-card {
+  background: #fff;
+  border: 0.5px solid #c5e8de;
+  border-radius: 20px;
+  padding: 1.8rem 1.5rem;
+  text-align: center;
+  width: 160px;
+  box-shadow: 0 6px 24px rgba(27,158,117,0.1);
+  transition: transform 0.2s;
+}
+.founder-card:hover { transform: translateY(-4px); }
+.founder-card.second { margin-top: 2rem; }
+.founder-avatar {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px; font-weight: 900; color: #fff;
+  margin: 0 auto 1rem;
+}
+.founder-name {
+  font-size: 15px; font-weight: 800; color: #0a4a38; margin-bottom: 4px;
+}
+.founder-role {
+  font-size: 12px; color: #7aaa9a; font-weight: 600;
+}
+.founder-heart {
+  display: inline-block;
+  margin-top: 10px;
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 50px;
+}
+
+/* ── MISSION ── */
+.mission-section {
+  background: #0f6e56;
+  padding: 4rem 2rem;
+  color: #fff;
+  text-align: center;
+}
+.mission-section .lyb-section-label { color: #9fe1cb; }
+.mission-section .lyb-section-title { color: #fff; margin-bottom: 1.5rem; }
+.mission-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.2rem, 3vw, 1.75rem);
+  color: #e1f5ee;
+  line-height: 1.6;
+  max-width: 720px;
+  margin: 0 auto 2rem;
+  font-style: italic;
+}
+.mission-quote span { color: #e39bd3; font-style: normal; }
+.mission-pillars {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+.mission-pillar {
+  background: rgba(255,255,255,0.1);
+  border: 0.5px solid rgba(255,255,255,0.2);
+  border-radius: 16px;
+  padding: 1.5rem 1.2rem;
+  width: 180px;
+  text-align: center;
+}
+.mission-pillar-icon { font-size: 26px; margin-bottom: 0.6rem; }
+.mission-pillar-title { font-size: 14px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+.mission-pillar-desc { font-size: 12px; color: #9fe1cb; line-height: 1.5; }
+
+/* ── WHY HIRE US ── */
+.why-section { background: #f9fef9; padding: 4rem 2rem; }
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 2rem;
+  max-width: 1100px;
+}
+.why-card {
+  background: #fff;
+  border: 0.5px solid #c5e8de;
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.why-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(27,158,117,0.12); }
+.why-icon {
+  width: 48px; height: 48px;
+  background: #e1f5ee; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; color: #1b9e75; margin-bottom: 1rem;
+}
+.why-title { font-size: 15px; font-weight: 800; color: #0a4a38; margin-bottom: 6px; }
+.why-desc { font-size: 13px; color: #6b8a80; line-height: 1.6; }
+
+/* ── FAMILY VALUES BANNER ── */
+.family-banner {
+  background: linear-gradient(135deg, #e39bd3 0%, #e1f5ee 100%);
+  padding: 3rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+.family-banner-icon { font-size: 56px; }
+.family-banner-text { max-width: 520px; }
+.family-banner-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  color: #0a4a38; margin-bottom: 0.6rem;
+}
+.family-banner-sub { font-size: 15px; color: #4a6860; line-height: 1.7; }
+.family-banner-sub strong { color: #0f6e56; }
+
+/* ── CTA ── */
+.about-cta {
+  background: #fff;
+  padding: 3.5rem 2rem;
+  text-align: center;
+  border-top: 0.5px solid #e6f3f0;
+}
+.about-cta .lyb-section-title { margin-bottom: 0.75rem; }
+.about-cta p { font-size: 15px; color: #6b8a80; margin-bottom: 1.75rem; line-height: 1.6; }
+.lyb-btn-primary {
+  background: #1b9e75; color: #fff; border: none; border-radius: 50px;
+  padding: 14px 32px; font-size: 15px; font-weight: 700; cursor: pointer;
+  font-family: 'Nunito', sans-serif; transition: background 0.2s, transform 0.1s;
+  text-decoration: none; display: inline-block;
+}
+.lyb-btn-primary:hover { background: #0f6e56; transform: translateY(-1px); }
+
+/* ── FOOTER ── */
+.lyb-footer {
+  background: #0a4a38; color: #9fe1cb; padding: 2rem 2rem 1.5rem; text-align: center;
+}
+.lyb-footer-logo { font-family: 'Playfair Display', serif; font-size: 20px; color: #fff; margin-bottom: 0.5rem; }
+.lyb-footer-logo span { color: #e07ecf; }
+.lyb-footer-tagline { font-size: 13px; margin-bottom: 1.5rem; color: #7aaa9a; }
+.lyb-footer-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.lyb-footer-links a { color: #9fe1cb; text-decoration: none; font-size: 13px; font-weight: 600; }
+.lyb-footer-links a:hover { color: #fff; }
+
+.lyb-footer-social { margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 14px; font-weight: 700; color: #fff; }
+.lyb-footer-social a { color: #9fe1cb; font-size: 20px; transition: color 0.2s; display: flex; }
+.lyb-footer-social a:hover { color: #fff; }
+
+.lyb-footer-payments { margin-bottom: 1.5rem; font-size: 12px; color: #7aaa9a; font-weight: 600; }
+.payment-icons { display: flex; justify-content: center; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+.pay-tag { background: rgba(255,255,255,0.08); padding: 4px 12px; border-radius: 6px; color: #9fe1cb; font-size: 11px; font-weight: 700; }
+
+.lyb-footer-copy { font-size: 11px; color: #4a8a74; }
+
+
+/* ── RESPONSIVE ── */
+@media (max-width: 640px) {
+  .lyb-nav-links { display: none; }
+  .story-section { flex-direction: column; }
+  .story-visual { width: 100%; }
+}
