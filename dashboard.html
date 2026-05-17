@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Account — Limpieza y Brillo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="dash-nav">
+    <a class="lyb-logo" href="index.html">
+      <img src="logo.jpeg" alt="Limpieza y Brillo" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover;">
+      <span class="lyb-logo-text">Limpieza <span>y Brillo</span></span>
+    </a>
+    <div class="nav-right">
+      <span class="nav-user" id="nav-username">Hi, —</span>
+      <button class="btn-logout" onclick="logout()">Sign out</button>
+    </div>
+  </nav>
+
+  <div class="dash-layout">
+    <!-- SIDEBAR -->
+    <aside class="dash-sidebar">
+      <div class="sidebar-section-label">Menu</div>
+      <button class="sidebar-link active" onclick="showPanel('overview', this)"><i class="ti ti-layout-dashboard"></i> Overview</button>
+      <button class="sidebar-link" onclick="showPanel('bookings', this)"><i class="ti ti-calendar"></i> My bookings</button>
+      <button class="sidebar-link" onclick="showPanel('new-booking', this)"><i class="ti ti-plus"></i> Book a cleaning</button>
+
+      <div class="sidebar-section-label">Account</div>
+      <button class="sidebar-link" onclick="showPanel('profile', this)"><i class="ti ti-user"></i> My profile</button>
+      <button class="sidebar-link" onclick="logout()"><i class="ti ti-logout"></i> Sign out</button>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="dash-main">
+
+      <!-- OVERVIEW -->
+      <div class="dash-panel active" id="panel-overview">
+        <div class="section-label">Dashboard</div>
+        <h1 class="section-title" id="welcome-title">Welcome back!</h1>
+        <p class="section-sub">Here's a summary of your account with Limpieza y Brillo.</p>
+
+        <div class="stat-row">
+          <div class="stat-card">
+            <div class="stat-icon"><i class="ti ti-calendar-check"></i></div>
+            <div class="stat-num" id="stat-total">0</div>
+            <div class="stat-label">Total bookings</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="ti ti-clock"></i></div>
+            <div class="stat-num" id="stat-upcoming">0</div>
+            <div class="stat-label">Upcoming</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="ti ti-star"></i></div>
+            <div class="stat-num" id="stat-completed">0</div>
+            <div class="stat-label">Completed</div>
+          </div>
+        </div>
+
+        <!-- Upcoming bookings preview -->
+        <div class="section-label" style="margin-top:1rem;">Upcoming appointments</div>
+        <div class="booking-list" id="overview-upcoming-list"></div>
+      </div>
+
+      <!-- MY BOOKINGS -->
+      <div class="dash-panel" id="panel-bookings">
+        <div class="section-label">Appointments</div>
+        <h2 class="section-title">My bookings</h2>
+        <p class="section-sub">View and manage all your past and upcoming cleaning appointments.</p>
+        <div class="booking-list" id="all-bookings-list"></div>
+      </div>
+
+      <!-- NEW BOOKING -->
+      <div class="dash-panel" id="panel-new-booking">
+        <div class="section-label">Schedule a clean</div>
+        <h2 class="section-title">Book a cleaning</h2>
+        <p class="section-sub">Fill out the form below and Citlali & Betty will confirm your appointment.</p>
+
+        <div class="book-form">
+          <div class="form-alert" id="booking-alert"></div>
+          <div class="form-grid">
+            <div class="field">
+              <label>Service type</label>
+              <select id="b-service">
+                <option value="" disabled selected>Choose a service…</option>
+                <option>Standard clean</option>
+                <option>Deep clean</option>
+                <option>Weekly / bi-weekly</option>
+                <option>Move-in / move-out</option>
+                <option>One-time clean</option>
+                <option>Apartment clean</option>
+                <option>Appliances clean</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Preferred date</label>
+              <input type="date" id="b-date" />
+            </div>
+            <div class="field">
+              <label>Preferred time</label>
+              <select id="b-time">
+                <option value="" disabled selected>Choose a time…</option>
+                <option>8:00 AM</option>
+                <option>9:00 AM</option>
+                <option>10:00 AM</option>
+                <option>11:00 AM</option>
+                <option>12:00 PM</option>
+                <option>1:00 PM</option>
+                <option>2:00 PM</option>
+                <option>3:00 PM</option>
+                <option>4:00 PM</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Home size</label>
+              <select id="b-size">
+                <option value="" disabled selected>Select home size…</option>
+                <option>Studio / 1 bedroom</option>
+                <option>2 bedrooms</option>
+                <option>3 bedrooms</option>
+                <option>4 bedrooms</option>
+                <option>5+ bedrooms</option>
+              </select>
+            </div>
+            <div class="field form-full">
+              <label>Address</label>
+              <input type="text" id="b-address" placeholder="123 Main St, Forney, TX 75126" />
+            </div>
+            <div class="field form-full">
+              <label>Special requests or notes</label>
+              <textarea id="b-notes" placeholder="Pets in the home, areas to focus on, access instructions…"></textarea>
+            </div>
+          </div>
+          <button class="btn-submit-form" onclick="submitBooking()">✨ Request this cleaning</button>
+        </div>
+      </div>
+
+      <!-- PROFILE -->
+      <div class="dash-panel" id="panel-profile">
+        <div class="section-label">Account</div>
+        <h2 class="section-title">My profile</h2>
+        <p class="section-sub">Update your personal information and contact details.</p>
+
+        <div class="profile-form">
+          <div class="avatar-row">
+            <div class="avatar-circle" id="profile-avatar">?</div>
+            <div class="avatar-info">
+              <div class="name" id="profile-name-display">—</div>
+              <div class="member" id="profile-joined">Member since —</div>
+            </div>
+          </div>
+          <div class="form-alert" id="profile-alert"></div>
+          <div class="form-grid" style="max-width:480px;">
+            <div class="field">
+              <label>First name</label>
+              <input type="text" id="p-first" />
+            </div>
+            <div class="field">
+              <label>Last name</label>
+              <input type="text" id="p-last" />
+            </div>
+            <div class="field form-full">
+              <label>Email address</label>
+              <input type="email" id="p-email" />
+            </div>
+            <div class="field form-full">
+              <label>Phone number</label>
+              <input type="tel" id="p-phone" />
+            </div>
+          </div>
+          <button class="btn-submit-form" onclick="saveProfile()" style="margin-top:1rem;">Save changes</button>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

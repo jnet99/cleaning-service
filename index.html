@@ -28,6 +28,8 @@
       <li><a href="#areas-we-serve">Areas we serve</a></li>
       <li><a href="#booking">Contact</a></li>
     </ul>
+    <div style="display:flex;gap:10px;align-items:center;">
+      <a href="login.html" style="font-size:14px;font-weight:700;color:#1b9e75;text-decoration:none;padding:8px 16px;border:1.5px solid #c5e8de;border-radius:50px;transition:background 0.2s;" onmouseover="this.style.background='#e1f5ee'" onmouseout="this.style.background='transparent'">Sign in</a>
     <button class="lyb-nav-cta" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Book now</button>
   </nav>
 
@@ -179,26 +181,37 @@
       <span class="lyb-promo-icon">✨</span>
       <span class="lyb-promo-text">First time booking? <strong>Get 10% OFF!</strong></span>
     </div>
-    <div class="lyb-form">
-      <input class="lyb-input" type="text" placeholder="Your name" />
-      <input class="lyb-input" type="tel" placeholder="Phone number" />
-      <input class="lyb-input" type="email" placeholder="Email address" />
-      <select class="lyb-input">
+    <form id="booking-form" class="lyb-form" onsubmit="handleBookingSubmit(event)">
+      <input class="lyb-input" type="text" name="name" placeholder="Your name" required />
+      <input class="lyb-input" type="tel" name="phone" placeholder="Phone number" required />
+      <input class="lyb-input" type="email" name="email" placeholder="Email address" required />
+      <select class="lyb-input" name="service" required>
         <option value="" disabled selected>Service type</option>
-        <option>Standard clean</option>
-        <option>Deep clean</option>
-        <option>Weekly / bi-weekly</option>
-        <option>Move-in / move-out</option>
-        <option>One-time clean</option>
-        <option>Apartment clean</option>
-        <option>Appliances clean</option>
+        <option value="Standard clean">Standard clean</option>
+        <option value="Deep clean">Deep clean</option>
+        <option value="Weekly / bi-weekly">Weekly / bi-weekly</option>
+        <option value="Move-in / move-out">Move-in / move-out</option>
+        <option value="One-time clean">One-time clean</option>
+        <option value="Apartment clean">Apartment clean</option>
+        <option value="Appliances clean">Appliances clean</option>
       </select>
-      <input class="lyb-input" type="date" />
-      <input class="lyb-input lyb-form-full" type="text" placeholder="Address" />
-      <textarea class="lyb-input lyb-form-full" placeholder="Additional information (e.g. specific appliances, pets, gate codes, etc.)"></textarea>
+      <input class="lyb-input" type="date" name="date" required/>
+      <input class="lyb-input lyb-form-full" type="text" name="address" placeholder="Address" required />
+      <textarea class="lyb-input lyb-form-full" name="message" placeholder="Additional information (e.g. specific appliances, pets, gate codes, etc.)"></textarea>
       <div class="lyb-form-full">
-        <button class="lyb-btn-yellow">Request my cleaning</button>
+        <button type="submit" id="booking-submit-btn" class="lyb-btn-yellow">Request my cleaning</button>
       </div>
+    </form>
+
+    <!-- Success Message -->
+    <div id="booking-success" style="display:none;">
+      <h3 style="margin-bottom: 0.5rem;">✨ Request Sent!</h3>
+      <p>Thank you! We've received your request and will reach out shortly to confirm your booking.</p>
+    </div>
+
+    <!-- Error Message -->
+    <div id="booking-error" style="display:none;">
+      <p>Something went wrong — please try again.</p>
     </div>
   </section>
 
@@ -232,6 +245,48 @@
     </div>
     <div class="lyb-footer-copy">© 2026 Limpieza y Brillo. All rights reserved.</div>
   </footer>
+
+   <script>
+    async function handleBookingSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('booking-form');
+      const btn  = document.getElementById('booking-submit-btn');
+      const successEl = document.getElementById('booking-success');
+      const errorEl   = document.getElementById('booking-error');
+ 
+      // Reset states
+      errorEl.style.display = 'none';
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+ 
+      try {
+        const data = new FormData(form);
+        const res  = await fetch('https://formspree.io/f/meedqele', {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+ 
+        if (res.ok) {
+          form.style.display = 'none';
+          successEl.style.display = 'block';
+        } else {
+          const json = await res.json();
+          errorEl.querySelector('p').textContent =
+            (json.errors && json.errors.map(e => e.message).join(', ')) ||
+            'Something went wrong — please try again.';
+          errorEl.style.display = 'block';
+          btn.disabled = false;
+          btn.textContent = '✨ Request my cleaning';
+        }
+      } catch (err) {
+        errorEl.querySelector('p').textContent = 'Network error — please check your connection and try again.';
+        errorEl.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = '✨ Request my cleaning';
+      }
+    }
+  </script>
 
 </body>
 </html>
